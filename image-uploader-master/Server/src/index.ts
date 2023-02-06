@@ -4,6 +4,7 @@ import fileUpload from "express-fileupload";
 import path from "path";
 import morgan from "morgan";
 import fs from "fs";
+import cors from "cors";
 
 import rimraf from "rimraf";
 
@@ -15,6 +16,8 @@ const app: Application = express();
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.send("Dev Challenges Image Uploader");
 });
+
+app.use(cors());
 
 app.use(morgan("dev"));
 app.use(fileUpload());
@@ -77,6 +80,8 @@ app.post("/api/upload", (req: Request, res: Response, next: NextFunction) => {
   if (!fs.existsSync(path.join(__dirname, "../tmp"))) {
     fs.mkdirSync(path.join(__dirname, "../tmp"));
   }
+
+  console.log(req.files);
 
   try {
     const file: any = req.files.file;

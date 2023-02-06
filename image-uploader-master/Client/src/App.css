@@ -57,6 +57,9 @@
   padding-left: 16px;
   padding-right: 16px;
   color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .sub-title {
@@ -104,9 +107,9 @@
 .loading {
   background-color: #eee;
   width: 100%;
-    height: 6px;
+  height: 6px;
   background: #F2F2F2;
-    border-radius: 8px;
+  border-radius: 8px;
   position: relative;
   margin-top: 31px;
   overflow: hidden;
@@ -163,4 +166,119 @@
 
   /* Gray 4 */
   color: #BDBDBD;
+}
+
+.uploaded-image-preview {
+  width: 400.36px;
+  min-height: 454.96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  gap: 26px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.uploaded-image-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.check-icon {
+  color: #219653;
+  height: 35px;
+  width: 35px;
+}
+
+
+
+.uploaded-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.035em;
+
+  /* Gray 2 */
+  color: #4F4F4F;
+}
+
+.uploaded-image {
+  width: 100%;
+}
+
+.uploaded-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F6F8FB;
+  height: 34px;
+  /* Gray 5 */
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 11px;
+  padding-right: 2px;
+}
+
+.uploaded-link-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 75%;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 12px;
+
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.035em;
+
+  /* Gray 2 */
+  color: #4F4F4F;
+  /* some width */
+}
+
+.copy-btn {
+  width: 74px;
+  height: 30px;
+  left: 813px;
+  top: 698.03px;
+
+  /* Blue 1 */
+  background: #2F80ED;
+  border-radius: 8px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 12px;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.035em;
+
+  color: #FFFFFF;
+}
+
+.copy-btn.copied{
+  background: #219653;
 }
