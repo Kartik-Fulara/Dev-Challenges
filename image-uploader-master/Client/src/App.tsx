@@ -2,42 +2,57 @@ import { useState } from "react";
 
 import "./App.css";
 
-const dragOver = (e: any) => {
-  e.preventDefault();
-  const dragDropContainer: any = document.getElementById("drag-drop-container");
-  dragDropContainer.classList.add("dragging");
-  console.log("drag over");
-};
-
-const dragEnter = (e: any) => {
-  e.preventDefault();
-  const dragDropContainer: any = document.getElementById("drag-drop-container");
-  dragDropContainer.classList.add("dragging");
-  console.log("drag enter");
-};
-
-const dragLeave = (e: any) => {
-  e.preventDefault();
-  const dragDropContainer: any = document.getElementById("drag-drop-container");
-  dragDropContainer.classList.remove("dragging");
-  console.log("drag leave");
-};
-
-const fileDrop = (e: any) => {
-  e.preventDefault();
-  const files = e.dataTransfer.files;
-  const dragDropContainer: any = document.getElementById("drag-drop-container");
-  dragDropContainer.classList.remove("dragging");
-  // check that the file is an image
-  if (files[0].type.split("/")[0] !== "image") {
-    alert("File is not an image");
-    return;
-  }
-
-  console.log(files);
-};
-
 function App() {
+
+   const [image, setImage] = useState("");
+
+   const [isUploading, setIsUploading] = useState(false);
+
+  const dragOver = (e: any) => {
+    e.preventDefault();
+    const dragDropContainer: any = document.getElementById(
+      "drag-drop-container"
+    );
+    dragDropContainer.classList.add("dragging");
+    console.log("drag over");
+  };
+
+  const dragEnter = (e: any) => {
+    e.preventDefault();
+    const dragDropContainer: any = document.getElementById(
+      "drag-drop-container"
+    );
+    dragDropContainer.classList.add("dragging");
+    console.log("drag enter");
+  };
+
+  const dragLeave = (e: any) => {
+    e.preventDefault();
+    const dragDropContainer: any = document.getElementById(
+      "drag-drop-container"
+    );
+    dragDropContainer.classList.remove("dragging");
+    console.log("drag leave");
+  };
+
+  const fileDrop = (e: any) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    const dragDropContainer: any = document.getElementById(
+      "drag-drop-container"
+    );
+    dragDropContainer.classList.remove("dragging");
+    // check that the file is an image
+    if (files[0].type.split("/")[0] !== "image") {
+      alert("File is not an image");
+      return;
+    }
+
+    console.log(files);
+  };
+
+
+
   return (
     <div className="App">
       <div className="image-uploader-container">
