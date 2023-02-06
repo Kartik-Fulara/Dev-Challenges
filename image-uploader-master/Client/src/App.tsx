@@ -3,10 +3,9 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [image, setImage] = useState("");
 
-   const [image, setImage] = useState("");
-
-   const [isUploading, setIsUploading] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   const dragOver = (e: any) => {
     e.preventDefault();
@@ -48,44 +47,63 @@ function App() {
       return;
     }
 
-    console.log(files);
+    setIsUploading(true);
+
+    const formData = new FormData();
+
+    formData.append("image", files[0]);
+
+    // fetch("https://image-uploader-dev-challenges.glitch.me/api/upload", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setImage(data.image);
+    //     setIsUploading(false);
+    //   });
   };
-
-
 
   return (
     <div className="App">
-      <div className="image-uploader-container">
-        <span className="title">Upload your image</span>
-        <span className="sub-title">File should be Jpeg, Png,...</span>
-        <div
-          onDragOver={dragOver}
-          onDragEnter={dragEnter}
-          onDragLeave={dragLeave}
-          onDrop={fileDrop}
-          id="drag-drop-container"
-          className="drag-drop-container"
-        >
-          <img
+      {!isUploading ? (
+        <div className="image-uploader-container">
+          <span className="title">Upload your image</span>
+          <span className="sub-title">File should be Jpeg, Png,...</span>
+          <div
             onDragOver={dragOver}
             onDragEnter={dragEnter}
             onDragLeave={dragLeave}
-            src="src/assets/image.svg"
-            className="logo"
-            alt="logo"
-          />
-          <span
-            onDragOver={dragOver}
-            onDragEnter={dragEnter}
-            onDragLeave={dragLeave}
-            className="drag-drop-text"
+            onDrop={fileDrop}
+            id="drag-drop-container"
+            className="drag-drop-container"
           >
-            Drag & Drop your image here
-          </span>
+            <img
+              onDragOver={dragOver}
+              onDragEnter={dragEnter}
+              onDragLeave={dragLeave}
+              src="src/assets/image.svg"
+              className="logo"
+              alt="logo"
+            />
+            <span
+              onDragOver={dragOver}
+              onDragEnter={dragEnter}
+              onDragLeave={dragLeave}
+              className="drag-drop-text"
+            >
+              Drag & Drop your image here
+            </span>
+          </div>
+          <span className="or">Or</span>
+          <button className="choose-file-btn">Choose a file</button>
         </div>
-        <span className="or">Or</span>
-        <button className="choose-file-btn">Choose a file</button>
-      </div>
+      ) : (
+        <div className="uploading">
+          <span className="uploading-title">Uploading...</span>
+          <div className="loading"></div>
+        </div>
+      )}
     </div>
   );
 }
