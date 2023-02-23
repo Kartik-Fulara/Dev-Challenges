@@ -1,0 +1,308 @@
+.windBnd__filter_container {
+  height: 55px;
+
+  background: #ffffff !important;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+
+  & .filter_title {
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 9px;
+    line-height: 11px;
+    text-transform: uppercase;
+
+    color: #333333;
+  }
+
+  &.btn_group {
+    width: 297px !important;
+  }
+
+  & .windBnd__filter_btn {
+    height: 100%;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  & .windBnd__filter_btn:not(:last-child) {
+    border-right: 1px solid #f2f2f2 !important;
+  }
+
+  & .windBnd__filter_btn:hover {
+    background-color: #f3f0f0 !important;
+  }
+
+  & .country_city {
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  & .add_guests {
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  & .add_guests.no_guests,
+  & .country_city.no_location {
+    color: #bdbdbd !important;
+  }
+
+  & .add_guests.have_guests,
+  & .country_city.have_location {
+    color: #333333 !important;
+  }
+
+  & .search {
+    color: #eb5757 !important;
+    font-size: 18px !important;
+  }
+}
+
+// offcanvas styles
+
+.windBnd__filter_offcanvas {
+  padding-top: 93px !important;
+
+  padding-left: 96px !important;
+  padding-right: 96px !important;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  & .windBnd__offcanvas_wrapper {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100% !important;
+  }
+
+  & .offcanvas_group {
+    min-height: 55px !important;
+  }
+
+  & .offcanvas_group,
+  & .offcanvas_options {
+    width: 100% !important;
+  }
+
+  &.desktop_tablet {
+    height: 460px !important;
+  }
+
+  &.mobile {
+    height: 80% !important;
+
+    & .offcanvas_group {
+      height: 120px !important;
+      width: 95%;
+    }
+
+    .divider {
+      height: 2px !important;
+    }
+  }
+
+  & .windBnd__offcanvas_wrapper .windBnd__filter_container {
+    display: flex;
+  }
+
+  & .windBnd__offcanvas_wrapper .windBnd_filter_btn {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    gap: 4px;
+    height: 100%;
+    padding-left: 30px !important;
+    width: 33%;
+  }
+
+  & .divider {
+    height: 100%;
+    width: 1px;
+    background: #f2f2f2 !important;
+  }
+
+  & .search_btn {
+    background: #eb5757 !important;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px !important;
+    width: 127px;
+    height: 48px;
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    /* identical to box height */
+    outline: none !important;
+    border: none !important;
+
+    color: #f2f2f2;
+  }
+
+  & .windBnd_filter_btn:not(.search_btn_wrapper),
+  .divider {
+    cursor: pointer !important;
+  }
+
+  & .search_btn_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .search_btn svg {
+    font-size: 17.05px;
+  }
+
+  & .offcanvas_options {
+    box-shadow: none !important;
+  }
+
+  .locations {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .guests {
+    cursor: none !important;
+  }
+
+  & .location {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    /* identical to box height */
+
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    color: #4f4f4f;
+    &:hover {
+      color: #000;
+    }
+
+    &.loca_selected {
+      color: #000 !important;
+    }
+
+  }
+
+  & .info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & .info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+
+      & .info_title {
+        font-family: "Mulish", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #333333 !important;
+      }
+
+      & .info_age {
+        font-family: "Mulish", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #bdbdbd !important;
+      }
+    }
+
+    & .guests {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+
+      & .guests_btn {
+        width: 23px;
+        height: 23px;
+
+        &.minus {
+          padding-top: 1.5px !important;
+        }
+
+        &.plus {
+          padding-left: 1.5px !important;
+        }
+
+        color: #828282 !important;
+        font-size: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+
+        background: transparent !important;
+        outline: none !important;
+
+        border: 1px solid #828282 !important;
+        border-radius: 4px !important;
+      }
+    }
+  }
+  .total_guests_container,
+  .country_city_choice_container {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease-in-out;
+    display: none !important;
+  }
+
+  .total_guests_container.show,
+  .country_city_choice_container.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: all 0.3s ease-in-out;
+    display: flex !important;
+  }
+
+  .windBnd_filter_btn.selected {
+    border: 1px solid #333333 !important;
+    filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1)) !important;
+    border-radius: 16px !important;
+  }
+}

@@ -1,0 +1,37 @@
+$utilities: (
+  "justify-content": (
+    property: justify-content,
+    class: justify-content,
+    responsive: true,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+    ),
+  ),
+  "flex-direction": (
+    property: flex-direction,
+    class: flex-direction,
+    responsive: true,
+    values: (
+      row: row,
+      column: column,
+      "row-reverse": row-reverse,
+      "column-reverse": column-reverse,
+    ),
+  ),
+  "z-index": (
+    property: z-index,
+    class: z,
+    values: (
+      "0": 0,
+      "10": 10,
+      "20": 20,
+      "30": 30,
+      "40": 40,
+      "50": 50,
+    ),
+  ),
+);
